@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+<style>
+    ul li a{
+    position: relative;
+    left: 130px;
+    margin: 20px;
+    }
+
+
+
+</style>
+
+
+
+
+
+
+
+<nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
+    <div class="container-fluid">
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">EmployeeSys</a>
+
+      <!-- Toggler for mobile view -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar content -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Left-aligned links -->
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="{{url_for('home')}}">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="{{url_for('about')}}">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{{url_for('service')}}">Employee</a></li>
+        </ul>
+          <!-- Middle: Search form -->
+          <form class="d-flex me-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+
+
+        <!-- Right-aligned buttons -->
+        <div class="d-flex">
+          <a href="/login" class="btn btn-outline-light me-2">Login</a>
+          <a href="/register" class="btn btn-warning">Register</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+{% block content %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p class="mb-1">© {{ current_year }} EmployeeSys | All Rights Reserved</p>
+      <p class="small mb-0">
+        <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+        <a href="#" class="text-white text-decoration-none me-3">Terms of Service</a>
+        <a href="#" class="text-white text-decoration-none">Contact Us</a>
+      </p>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

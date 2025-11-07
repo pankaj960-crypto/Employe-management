@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block title %}
+   welcome
+{% endblock %}
+
+{% block content %}
+
+   {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                  {% for message in messages %}
+                    <div class="alert alert-success alert-dismissable fade show"  role="alert">
+                      {{message}}
+                       <button type="button" class="close" data-bs-dismiss="alert" aria-label="close">
+                         <span aria-hidden="true" >&times;</span>
+                       </button>
+
+                    </div>
+                  {% endfor %}
+                  {% endif %}
+                  {% endwith %}
+
+
+
+
+
+  <h3>Welcome: {{name}}</h3>
+  <a href="{{url_for('login')}}">Logout</a>
+{% endblock %}
